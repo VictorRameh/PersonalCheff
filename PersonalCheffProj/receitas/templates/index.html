@@ -9,29 +9,19 @@
             <th>Vídeo</th>
             <th>Ações</th>
         </tr>
+    {% for chave, uma_receita in lista_receitas.items %}
         <tr>
             <td>
                 <img src="{% static 'suco.png' %}" 
                 class="icone-suco">
+                 {{chave}} {{uma_receita}}
                 
-                {% for chave, uma_receita in lista_receitas.items %}
-                    <strong>{{uma_receita}}</strong><br>
-                {% endfor %}
            
             </td>
             <td><a href="https://www.youtube.com/watch?v=Nn9140bDPnc">Ver vídeo</a></td>
             <td><a href="{% url 'sucodelaranja' %}" class="btn btn-info">Ver receita completa</a></td>
         </tr>
-        <tr>
-            <td>
-                <img src="{% static 'suco.png' %}" class="icone-suco">
-               
-            </td>
-            <td><a href="https://www.youtube.com/watch?v=7aavIewcSY4">Ver vídeo</a></td>
-            <td>
-                <a href="{% url 'sucodelimao' %}" class="btn btn-info">Ver receita completa</a>
-            </td>
-        </tr>
+    {% endfor %}        
     </table>
 {% include 'partials/footer.html' %}
 {% endblock %}
