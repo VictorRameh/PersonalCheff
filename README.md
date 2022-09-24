@@ -120,7 +120,7 @@ INSTALLED_APPS[
         <a href="{% url 'index' %}">Página inicial</a>
         ```
 - [X] Criando o base.html
-    - na pasta `templates`crie o arquivo `base.html`. Esse arquivo contém todo o código de estrutura comum à todas as páginas. Nesse arquivo deve ficar tudo que tiver antes do `body` e tudo que tiver depois do `/body`.
+    - na pasta `templates`crie o arquivo `base.html`. Esse arquivo contém todo o código de estrutura comum à todas as páginas. Nesse arquivo deve ficar tudo que tiver antes do `body` e tudo que tiver depois do `/body`(!).
     - nesse arquivo deve conter o `{% load static %}`
     - nesse arquivo, no local aonde será carregado o conteúdo das outras páginas, deve existir os delimitadores `{% block content %}` e `{% endblock %}`
     - o código do `base.html` será algo parecido com:

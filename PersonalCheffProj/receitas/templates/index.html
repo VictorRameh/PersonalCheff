@@ -11,20 +11,25 @@
         </tr>
         <tr>
             <td>
-                <img src="{% static 'suco.png' %}" class="icone-suco">
-                Suco de laranja
+                <img src="{% static 'suco.png' %}" 
+                class="icone-suco">
+                
+                {% for chave, uma_receita in lista_receitas.items %}
+                    <strong>{{uma_receita}}</strong><br>
+                {% endfor %}
+           
             </td>
-            <td>https://www.youtube.com/watch?v=Nn9140bDPnc</td>
+            <td><a href="https://www.youtube.com/watch?v=Nn9140bDPnc">Ver vídeo</a></td>
             <td><a href="{% url 'sucodelaranja' %}" class="btn btn-info">Ver receita completa</a></td>
         </tr>
         <tr>
             <td>
                 <img src="{% static 'suco.png' %}" class="icone-suco">
-                Suco de limão
+               
             </td>
-            <td>https://www.youtube.com/watch?v=7aavIewcSY4</td>
+            <td><a href="https://www.youtube.com/watch?v=7aavIewcSY4">Ver vídeo</a></td>
             <td>
-                <a href="{% url 'sucodelimao' %}">Ver receita completa</a>
+                <a href="{% url 'sucodelimao' %}" class="btn btn-info">Ver receita completa</a>
             </td>
         </tr>
     </table>
