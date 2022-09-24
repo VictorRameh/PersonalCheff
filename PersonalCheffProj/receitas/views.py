@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
 def index(request):
-    return render(request,'index.html')
+    return render(request,'index.html', 
+    {'nome_da_receita': 'Suco de Laranja'})
 
 def contato(request):
     return render(request,'contato.html')
