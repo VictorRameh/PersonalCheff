@@ -242,7 +242,7 @@ INSTALLED_APPS[
     -No terminal digite `python manage.py migrate`
 
 - [X] Criando um usuário para o ambiente administrativo
-    -O Django ja cria um ambiente administrativo para a nossa aplicação, ficando esse ambiente em : `http://127.0.0.1:8000/admin/`
+    -O Django já cria um ambiente administrativo para a nossa aplicação, ficando esse ambiente em : `http://127.0.0.1:8000/admin/`
     -Para utilizar o ambiente administrativo precisamos criar um usuário de acesso. No terminal digite :
     `python manage.py createsuperuser`
     ***OBS: Quando digitar a senha, ela vai ficar em brano.
@@ -256,6 +256,9 @@ INSTALLED_APPS[
 
     admin.site.register(Receitas)
     ```
+
+- [ ] Trazendo os dados do banco de dados
+- [ ] Exibição das páginas individuais das receitas
 
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.

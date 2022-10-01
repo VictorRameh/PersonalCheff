@@ -9,16 +9,14 @@
             <th>Vídeo</th>
             <th>Ações</th>
         </tr>
-    {% for chave, uma_receita in lista_receitas.items %}
+    {% for receita in lista_receitas %}
         <tr>
             <td>
                 <img src="{% static 'suco.png' %}" 
                 class="icone-suco">
-                 {{chave}} {{uma_receita}}
-                
-           
+                 {{receita.nome_receita}}                          
             </td>
-            <td><a href="https://www.youtube.com/watch?v=Nn9140bDPnc">Ver vídeo</a></td>
+            <td><a href={{receita.video}}>Ver vídeo</a></td>
             <td><a href="{% url 'sucodelaranja' %}" class="btn btn-info">Ver receita completa</a></td>
         </tr>
     {% endfor %}        
