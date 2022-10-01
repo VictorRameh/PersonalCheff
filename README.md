@@ -200,7 +200,7 @@ INSTALLED_APPS[
     -Dentro do PHPMyAdmin, clickno botão `novo` para criar um banco de dados, insira o nome `personalcheff_bd`
 
 - [X] Instalando o conector do bando de dados MySQL
-    -`pip install mysqlclient`
+    -`pip install mysqlclient` , se der negado, tente `python -m pip install mysqlclient`
 - [X] Configurar a conexão com MySQL
     -No arquivo `settings.py` , na linha ~78 configurar a conexãopara o seu banco de dados como no exemplo: 
     ```python
@@ -233,10 +233,29 @@ INSTALLED_APPS[
         data_receita = models.DateTimeField(default=datetime.now, blank=True)
     ```
     
-- [ ] Criando a migration (mapeamento)
-- [ ] Realizando a migration
-- [ ] Registrando um modelo no admin
-- [ ] Criando um usuário para o ambiente administrativo
+- [X] Criando a migration (mapeamento)
+    -Preparar todas as models criadas para serem migradas para o banco de dados
+    -No terminal digite `python manage.py makemigrations`
+
+- [X] Realizando a migration
+    -Realizar a migração é criar fisicamente no banco de dados as tabelas preparadas anteriormente, e no nosso caso, as tabelas preparadas pelo django para o seu ambiente administrativo
+    -No terminal digite `python manage.py migrate`
+
+- [X] Criando um usuário para o ambiente administrativo
+    -O Django ja cria um ambiente administrativo para a nossa aplicação, ficando esse ambiente em : `http://127.0.0.1:8000/admin/`
+    -Para utilizar o ambiente administrativo precisamos criar um usuário de acesso. No terminal digite :
+    `python manage.py createsuperuser`
+    ***OBS: Quando digitar a senha, ela vai ficar em brano.
+
+- [X] Registrando um modelo no admin
+    -Para criar o módulo referente ao nosso APP no ambiente administrativo, precisamos registrar nossos modelo no admin.
+    -Abra o arquivo `receitas\admin.py` e registre o seu modelo:
+    ```python 
+    from django.contrib import admin
+    from .models import Receitas
+
+    admin.site.register(Receitas)
+    ```
 
 ## 📝 Licença
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
