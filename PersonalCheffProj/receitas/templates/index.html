@@ -6,6 +6,7 @@
     <table border="1" class="table table-striped table-hover">
         <tr class="table-dark">
             <th>Receita</th>
+            <th>Nota</th>
             <th>Vídeo</th>
             <th>Ações</th>
         </tr>
@@ -15,6 +16,11 @@
                 <img src="{% static 'suco.png' %}" 
                 class="icone-suco">
                  {{receita.nome_receita}}                          
+            </td>
+            <td>
+                <img src="{% static 'star_icon.png' %}"
+                class="icone star_icon">
+                {{receita.nota}}
             </td>
             <td><a href={{receita.video}}>Ver vídeo</a></td>
             <td><a href="{% url 'sucodelaranja' %}" class="btn btn-info">Ver receita completa</a></td>
