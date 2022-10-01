@@ -201,7 +201,38 @@ INSTALLED_APPS[
 
 - [X] Instalando o conector do bando de dados MySQL
     -`pip install mysqlclient`
-- [ ] Criando o modelo da receita
+- [X] Configurar a conexão com MySQL
+    -No arquivo `settings.py` , na linha ~78 configurar a conexãopara o seu banco de dados como no exemplo: 
+    ```python
+        DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'personalcheff_bd',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
+    ```
+
+- [X] Criando o modelo de receita
+    -Modelo é a representação das tabelas no banco de dados. Cada classe em uma model equivale a uma tabela.
+    -No arquivos `receitas\models.py` , crie a classe para a representação da tabela de receitas:
+    ```python
+    from django.db import models
+
+    from datetime import datetime
+
+    class Receitas(models.Model):
+        nome_receita = models.CharField(max_length=100)
+        video = models.CharField(max_length=80)
+        modo_preparo =  models.TextField()
+        ingredientes = models.TextField()
+        nota = models.IntegerField()
+        data_receita = models.DateTimeField(default=datetime.now, blank=True)
+    ```
+    
 - [ ] Criando a migration (mapeamento)
 - [ ] Realizando a migration
 - [ ] Registrando um modelo no admin
