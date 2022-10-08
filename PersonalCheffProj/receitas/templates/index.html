@@ -17,11 +17,11 @@
                 class="icone-suco">
                  {{receita.nome_receita}}                          
             </td>
-            <td>
-                {{receita.nota}}
+            <td>               
                 {% with ''|center:receita.nota as range %}
                 {% for i in range %} 
-                *
+                <img src="{% static 'star_icon.png' %}"
+                width="18">
                 {% endfor %} 
                 {% endwith %}
             </td>
